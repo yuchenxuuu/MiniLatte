@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Instructors</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th> </th>
+      <th>instructor_id</th>
+      <th>Email</th>
+      <th>First</th>
+      <th>Last</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% count = 0 %>
+    <% @instructors.each do |instructor| %>
+      <tr>
+      <% count += 1 %>
+        <th scope = "row"><%= count %><th>
+        <td><%= instructor.instructor_id %></td>
+        <td><%= instructor.email %></td>
+        <td><%= instructor.first %></td>
+        <td><%= instructor.last %></td>
+        <td><%= link_to 'Show', instructor %></td>
+        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+        <td><%= link_to 'Destroy', instructor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Instructor', new_instructor_path %>
