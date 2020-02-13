@@ -2,7 +2,7 @@
 
 * Ruby version : 2.6.3
  
-* Github repo link: https://github.com/yuchenxuuu/my-app.git
+* Github repo link: https://github.com/yuchenxuuu/PArails01-COSI166.git
 
 * Heroku Link:  https://polar-forest-29088.herokuapp.com/
 
