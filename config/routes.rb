@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :subjects
   resources :enrollments
   
-  root :to => "page#home"
-
+ 
+  root :to => 'page#home'
   get  'course_list',    to: 'courses#index'
   get  'subject_list',    to: 'subjects#index'
   get  'instructor_list',    to: 'instructors#index'

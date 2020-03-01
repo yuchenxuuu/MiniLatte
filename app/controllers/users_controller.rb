@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -20,9 +21,6 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
-
-  
-
   
   # POST /users
   # POST /users.json
@@ -37,7 +35,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
   # PATCH/PUT /users/1
