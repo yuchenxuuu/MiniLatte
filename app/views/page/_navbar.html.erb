@@ -12,7 +12,10 @@
         <li>
             <%= link_to "Course Page", 'course_list'  %> 
         </li>
-       
+        <% if logged_in? %>
+        <% else %> 
+            <li><%= link_to "Log in", 'course_list'  %></li>
+        <% end %>    
     </ul>
 </p>
 

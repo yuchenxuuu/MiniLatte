@@ -46,6 +46,7 @@ group :development do
   gem 'activerecord-import'
   gem "better_errors"
   gem "pry-rails"
+  
 end
 
 group :test do

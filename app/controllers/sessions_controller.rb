@@ -21,19 +21,22 @@ class SessionsController < ApplicationController
   def edit
   end
 
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
   # POST /sessions
   # POST /sessions.json
   def create
-    @session = Session.new(session_params)
-
-    respond_to do |format|
-      if @session.save
-        format.html { redirect_to @session, notice: 'Session was successfully created.' }
-        format.json { render :show, status: :created, location: @session }
-      else
-        format.html { render :new }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
-      end
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      flash[:success] = 'Log in successfully'
+10    
+    else
+      # Create an error message.
+      flash[:danger] = 'Invalid email/password combination'
+      render 'new'
     end
   end
 

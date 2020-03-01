@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get  'instructor_list',    to: 'instructors#index'
   get  '/signup', to: 'users#new'
   
-  get '/login', to: 'sessions#new'
+  get  '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   

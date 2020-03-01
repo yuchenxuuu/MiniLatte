@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_02_29_173136) do
   end
 
   create_table "enrollments", force: :cascade do |t|
+    t.string "user_id"
+    t.string "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -61,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_02_29_173136) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
