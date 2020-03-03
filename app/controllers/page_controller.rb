@@ -16,5 +16,19 @@ class PageController < ApplicationController
     @title = "Help"
     end
 
+    def search
+        render 'page/search'
+    end
+    # search for the course
+    def do_search
+
+        if params[:subject].blank?
+             @courses = Course.where("name LIKE ?", "%#{params[:search_text]}%")
+        else
+             @courses = Subject.find(params[:subject]).courses.where("name LIKE ?", 
+                            "%#{params[:search_text]}%")
+        end
+    end
+
 
 end

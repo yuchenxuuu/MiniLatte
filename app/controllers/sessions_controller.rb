@@ -14,16 +14,12 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-   
   end
 
   # GET /sessions/1/edit
   def edit
   end
 
-  def log_in(user)
-    session[:user_id] = user.id
-  end
 
   # POST /sessions
   # POST /sessions.json
@@ -40,28 +36,14 @@ class SessionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sessions/1
-  # PATCH/PUT /sessions/1.json
-  def update
-    respond_to do |format|
-      if @session.update(session_params)
-        format.html { redirect_to @session, notice: 'Session was successfully updated.' }
-        format.json { render :show, status: :ok, location: @session }
-      else
-        format.html { render :edit }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+ 
 
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
     @session.destroy
-    respond_to do |format|
-      format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    log_out
+    redirect_to root_url
   end
 
   private

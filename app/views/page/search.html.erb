@@ -1,0 +1,20 @@
+<% provide(:title, 'Search') %>
+<h1 class="text-center my-5">Course Search</h1>
+
+<%= form_tag(search_result_path, remote: true, method: :get) do %>
+  <div class="row mb-5">
+
+    <div class="form-group col-sm-4">
+      <%= label_tag(:subject_search, 'Subject:') %>
+      <%= collection_select(:subject, :subject_id, Subject.all,:id, :name,{prompt: 'Select Subject'}, onchange: 'Rails.fire(this.form, "submit")', class: 'form-control') %>
+    </div>
+
+    <div class="form-group col-md-8">
+      <%= label_tag(:course_name_search, 'Name:') %>
+      <%= text_field_tag :course_name, nil, onkeyup: 'Rails.fire(this.form, "submit")', placeholder: 'Course Name', class: 'form-control' %>
+    </div>
+
+  </div>
+<% end %>
+
+<div id="search_result"> </div>
