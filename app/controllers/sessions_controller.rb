@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   before_action :set_session, only: [:show, :edit, :update, :destroy]
+  include SessionsHelper
 
   # GET /sessions
   # GET /sessions.json
@@ -28,14 +29,12 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       flash[:success] = 'Log in successfully'
-10    
+      redirect_to root_path
     else
-      # Create an error message.
       flash[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
-
  
 
   # DELETE /sessions/1

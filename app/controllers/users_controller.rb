@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
+  include UsersHelper
   # GET /users
   # GET /users.json
   def index
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
       flash[:success] = "Welcome #{@user.name}"
       redirect_to root_url
     else
@@ -59,15 +58,21 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+def enroll
+  if Enrollment.create(user_id: current_user.id, course_id: params[:course_id])
+    flash[:success] =  'Successfully enrolled in this course'
+  else
+    flash[:danger] = 'The course has already been enrolled'
   end
+end
 
+def enrolled_course
+  @user = current_user
+  @course = Enrollment.current_user.course.all
+end
+
+def drop
+
+end
   
 end

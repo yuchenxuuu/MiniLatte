@@ -44,6 +44,8 @@ Subject.import subjects_columns, subjects, validate: false
 
 #read the data from subject file and stor in database
 courses = []
+course_subjects = []
+course_subject_column = [:course_id, :subject_id]
 courses_columns = [:course_id, :comment, :term, :code, :subjects, :continuity_id, :name, :description, :credits, :independentstudy, :requirements]
 course_data.each do |row|
     subjectArray = row['subjects']
@@ -51,10 +53,10 @@ course_data.each do |row|
     requirementArray = row['requirements']
     requirementInfo = ""
     subjectArray.each do |subject|
-        subjectInfo += subject.to_s
-    end
-    requirementArray.each do |requirement|
-        requirementInfo += requirement
+        course_subjects << {
+                                course_id: row['code'], 
+                                subject_id: subject['id']
+                            }
     end
     courses << {
                     course_id: row['id'],
@@ -69,10 +71,11 @@ course_data.each do |row|
                     independentstudy: row['independentstudy'],
                     requirements: requirementInfo 
                 }
+    
 end
 #import the array of data into the database
 Course.import courses_columns, courses, validate: false
-
+CourseSubject.import course_subject_column, course_subjects 
 
 instructors = []
 instructors_columns = [:instructor_id,:comment, :email, :first, :middle, :last]
