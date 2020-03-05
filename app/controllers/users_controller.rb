@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  
+  skip_before_action :require_login, only: [:new, :create]
   include UsersHelper
+  
   # GET /users
   # GET /users.json
   def index
@@ -66,13 +68,14 @@ def enroll
   end
 end
 
-def enrolled_course
-  @user = current_user
-  @course = Enrollment.current_user.course.all
+def my_course
+  @users = current_user
+  @courses = current_user.courses.all
 end
 
 def drop
-
+  # e = Enrollment.where()
+  flash[:success] = 'Successfully dropped the course'
 end
   
 end

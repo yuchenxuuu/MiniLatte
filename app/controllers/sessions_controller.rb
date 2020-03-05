@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:new, :create]
   include SessionsHelper
 
   # GET /sessions
@@ -40,7 +40,6 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
-    @session.destroy
     log_out
     redirect_to root_url
   end

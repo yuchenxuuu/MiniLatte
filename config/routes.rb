@@ -12,15 +12,15 @@ Rails.application.routes.draw do
   get  'instructor_list',    to: 'instructors#index'
 
   get  '/signup', to: 'users#new'
-  post '/signup', to: 'user#create'
+  post '/signup', to: 'users#create'
   
   get  '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get '/enrolled', to: 'user#enrolled_course'
-  post '/enroll/:course_id', to: 'user#enroll'
-  post '/drop/:course_id', to: 'user#drop'
+  get '/enrolled', to: 'users#my_course'
+  post '/enroll/:course_id', to: 'users#enroll'
+  post '/drop/:course_id', to: 'users#drop'
 
   
   get '/search', to: 'page#search'

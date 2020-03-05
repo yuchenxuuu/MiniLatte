@@ -1,8 +1,8 @@
 <% provide(:title, 'Search') %>
 <h1 class="text-center my-5">Course Search</h1>
 
-<%= form_tag(search_result_path, remote: true, method: :get) do %>
-  <div class="row mb-5">
+<%= form_tag(result_path, remote: true, method: :get) do %>
+  <div class="search-area">
 
     <div class="form-group col-sm-4">
       <%= label_tag(:subject_search, 'Subject:') %>
@@ -11,10 +11,10 @@
 
     <div class="form-group col-md-8">
       <%= label_tag(:course_name_search, 'Name:') %>
-    
+      <%= text_field_tag :course_name, nil, onkeyup: 'Rails.fire(this.form, "submit")', placeholder: 'Enter Course Name', autofocus:true, class: 'form-control' %>
     </div>
 
   </div>
 <% end %>
 
-<div id="search_result"> </div>
+<div id="result"> </div>

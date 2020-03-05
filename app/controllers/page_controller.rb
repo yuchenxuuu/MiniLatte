@@ -13,16 +13,16 @@ class PageController < ApplicationController
     end
     
     def help
-    @title = "Help"
+        @title = "Help"
     end
 
     def search
-        render 'page/search'
+        @courses = Course.all
+        @subjects = Subject.all 
     end
   
     # search for the course
     def get_result
-
         if params[:subject].blank?
              @courses = Course.where("name LIKE ?", "%#{params[:search_text]}%")
         else
