@@ -63,5 +63,5 @@ gem 'pry-byebug'
 gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
-gem 'activerecord-import'
+
 
