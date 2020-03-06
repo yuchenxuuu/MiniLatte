@@ -20,13 +20,6 @@
     position: fixed;
   }
 
-  .coral-square {
-    background-color: coraL;
-    width: 100px;
-    height: 100px;
-    align-items: center;
-    display: inline-block;
-  }
   .search-area {
     padding-top: 20px;
   }
@@ -39,7 +32,25 @@
 
 .body-container {
     padding-top: 10px;
+}
+
+
+.gravatar {
+    float: left;
+    margin-right: 20px;
   }
+  
+.gravatar_edit {
+    margin-top: 15px;
+  }
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+   
+  }
+  
 
 
   
