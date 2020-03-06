@@ -1,10 +1,9 @@
 class CreateCourses < ActiveRecord::Migration[6.0]
   def change
-    create_table :courses do |t|
-      t.string :course_id
+    create_table :courses, id: false do |t|
+      t.string :id, primary_key: true
       t.string :comment
       t.string :term
-      t.string :code
       t.string :subjects
       t.string :continuity_id
       t.string :name

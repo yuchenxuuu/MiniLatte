@@ -3,7 +3,7 @@
 
 .gravatar {
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   
   .gravatar_edit {
@@ -19,20 +19,14 @@
   
 /* either @import your-file-containing-box-sizing-mixin; or: */
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
-
 input {
     height: auto !important;
 }
 
-.search-area {
+
+.title-area {
+
   padding-top: 100px;
 }
 
-.navbar {
-  position: fixed;
-}
+

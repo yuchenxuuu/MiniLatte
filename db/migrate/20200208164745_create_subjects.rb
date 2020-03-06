@@ -1,7 +1,7 @@
 class CreateSubjects < ActiveRecord::Migration[6.0]
   def change
-    create_table :subjects do |t|
-      t.string :subject_id
+    create_table :subjects, id: false do |t|
+      t.string :id, primary_key: true
       t.string :comment
       t.string :term
       t.string :name

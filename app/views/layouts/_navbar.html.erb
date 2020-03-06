@@ -1,9 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap" rel="stylesheet">
-<nav class="nav navbar navbar-expand-lg navbar-dark" style="background-color: #212121;">
-  <%= link_to "COURSE CATALOG", root_path, class: "navbar-brand" %>
-  
-    <h1 style ="font-family: 'Coda Caption', sans-serif;">Welcome</h1>
-    <p>
+<nav class="nav navbar navbar-expand-lg navbar-fixed-top" style="background-color: #A4D593;">
+  <%= link_to "Mini Latte", root_path, class: "navbar-brand" %>
+    <% if logged_in? %>
         <ul class="nav nav-tabs navbar-right">
             <li>
                 <%= link_to "Instructor Page", 'instructor_list' %> 
@@ -15,25 +13,28 @@
                 <%= link_to "Course Page", 'course_list'  %> 
             </li>
             <li><%= link_to "Search", search_path %></li>
-            <% if logged_in? %>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+         
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         Account <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
+                </a>
+                <ul class="dropdown-menu">
                         <li><%= link_to "Profile", current_user %></li>
                         <li><%= link_to "My Course", enrolled_path %></li>
                         <li class="divider"></li>
                         <li>
                         <%= link_to "Log out", logout_path, method: :delete %>
                         </li>
-                    </ul>
-                </li>
-            <% else %> 
-                <li><%= link_to "Log in", login_path  %></li>
-            <% end %>    
+                </ul>
+            </li>
         </ul>
-    </p>
+    <% else %>
+        <ul class="nav nav-tabs navbar-right">
+          
+            <li><%= link_to "Log in", login_path  %></li>
+        </ul>
+    <% end %>
+   
 </nav>
 
 

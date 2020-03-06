@@ -1,0 +1,45 @@
+
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+      </h1>
+      <h3>Name: <%= @user.name %></h3>
+
+      <h3>Email: <%= @user.email %></h3>
+    </section>
+  </aside>
+</div><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><html>
+<head>
+  <title>Courses enrolled</title>
+
+</head>
+
+
+<h3 >Enrolled Courses:</h3>
+
+<table class="table table-striped">
+<thead>
+<tr>
+  <th>Code</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th colspan="3"></th>
+</tr>
+</thead>
+
+<tbody>
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.name %></td>
+    <td><%= course.description %></td>
+    <td><%= link_to 'Drop', "/drop/#{course.id}", class: 'btn btn-primary', method: :post %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+

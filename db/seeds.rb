@@ -21,7 +21,7 @@ Instructor.delete_all
 
 #read the data from subject file and stor in database
 subjects = []
-subjects_columns = [:subject_id, :name, :term, :abbreviation, :comment, :segments]
+subjects_columns = [:id, :name, :term, :abbreviation, :comment, :segments]
 subject_data.each do |row|
     segmentArray = row['segments']
     segemntsID = ""
@@ -31,7 +31,7 @@ subject_data.each do |row|
    
 
     subjects << {
-                    subject_id: row['id'],
+                    id: row['id'],
                     name: row['name'],
                     term: row['term'],
                     abbreviation: row['abbreviation'],
@@ -46,7 +46,7 @@ Subject.import subjects_columns, subjects, validate: false
 courses = []
 course_subjects = []
 course_subject_column = [:course_id, :subject_id]
-courses_columns = [:course_id, :comment, :term, :code, :subjects, :continuity_id, :name, :description, :credits, :independentstudy, :requirements]
+courses_columns = [:id, :comment, :term, :subjects, :continuity_id, :name, :description, :credits, :independentstudy, :requirements]
 course_data.each do |row|
     subjectArray = row['subjects']
     subjectInfo = ""
@@ -59,15 +59,14 @@ course_data.each do |row|
                             }
     end
     courses << {
-                    course_id: row['id'],
+                    id: row['code'],
                     comment: row['comment'],
                     term: row['term'],
-                    code: row['code'],
                     subjects: subjectInfo,
                     continuity_id: row['continuity_id'],
                     name: row['name'],
                     description: row['description'],
-                    credits: row['creadits'],
+                    credits: row['credits'],
                     independentstudy: row['independentstudy'],
                     requirements: requirementInfo 
                 }

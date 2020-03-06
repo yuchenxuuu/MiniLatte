@@ -14,7 +14,32 @@
  *= require_self
  */
 
+ @import "font-awesome";
+ 
  .navbar {
     position: fixed;
   }
+
+  .coral-square {
+    background-color: coraL;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    display: inline-block;
+  }
+  .search-area {
+    padding-top: 20px;
+  }
+  .search-form {
+    align-items: center;
+    margin-left: 120px;
+  }
+  
+  
+
+.body-container {
+    padding-top: 100px;
+  }
+
+
   

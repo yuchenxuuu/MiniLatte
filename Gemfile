@@ -46,7 +46,7 @@ group :development do
   gem 'activerecord-import'
   gem "better_errors"
   gem "pry-rails"
-  
+  gem "font-awesome-rails"
 end
 
 group :test do
@@ -64,3 +64,4 @@ gem 'better_errors'
 gem 'awesome_print'
 gem 'faker'
 gem 'activerecord-import'
+

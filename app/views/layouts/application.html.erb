@@ -12,10 +12,15 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <div >
-      <%= yield %>
-    </div>
     
+    <div class="body-container mx-auto">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+
+        <%= yield %>
+    </div>
+
     <%= render 'layouts/footer' %>
   </body>
 </html>

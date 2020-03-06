@@ -22,11 +22,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_010802) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "courses", force: :cascade do |t|
-    t.string "course_id"
+  create_table "courses", id: :string, force: :cascade do |t|
     t.string "comment"
     t.string "term"
-    t.string "code"
     t.string "subjects"
     t.string "continuity_id"
     t.string "name"
@@ -56,8 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_010802) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "subjects", force: :cascade do |t|
-    t.string "subject_id"
+  create_table "subjects", id: :string, force: :cascade do |t|
     t.string "comment"
     t.string "term"
     t.string "name"
