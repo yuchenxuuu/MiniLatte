@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :instructors
-  resources :courses
-  resources :subjects
-  resources :enrollments
-  
- 
+
   root :to => 'page#home'
   get  'course_list',    to: 'courses#index'
   get  'subject_list',    to: 'subjects#index'
@@ -24,6 +18,12 @@ Rails.application.routes.draw do
 
   post '/search', to: 'page#do_search'
   get '/search', to: 'page#show_search'
+
+  resources :users
+  resources :instructors
+  resources :courses
+  resources :subjects
+  resources :enrollments
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
