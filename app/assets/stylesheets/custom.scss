@@ -1,3 +1,8 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+  
+/* either @import your-file-containing-box-sizing-mixin; or: */
 
 input {
     height: auto !important;
@@ -5,6 +10,7 @@ input {
 
 
 .title-area {
+
   padding-top: 50px;
 }
 
