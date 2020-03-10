@@ -16,6 +16,7 @@
  
  .navbar {
     position: fixed;
+    background-color: #D4E980;
   }
 
   .search-area {
@@ -23,7 +24,7 @@
   }
   .search-form {
     align-items: center;
-    margin-left: 120px;
+    margin-left: 160px;
   }
   
   
@@ -48,6 +49,48 @@ input, textarea, select, .uneditable-input {
     margin-bottom: 15px;
    
   }
+
+  .homepagecards {
+    margin-top: 60px;
+    align-items: center;
+    margin-left: 120px;
+  }
+
+  .center-button {
+    border: 1px solid #bbb;
+    margin-left: 600px;
+    align-items: center;
+    background-color: #D4E980 !important;
+    border: 1px solid #D4E980 !important;
+  }
+
+
+  .sub1-button {
+    border: 1px solid #bbb;
+    
+    align-items: center;
+    background-color:#FFC300!important;
+    border: 1px solid #FFC300!important;
+  }
+
+  .sub2-button {
+    border: 1px solid #bbb;
+    
+    align-items: center;
+    background-color:#FF5733!important;
+    border: 1px solid #FF5733!important;
+  }
+
+
+  .sub3-button {
+    border: 1px solid #bbb;
+    
+    align-items: center;
+    background-color:#C70039!important;
+    border: 1px solid #C70039!important;
+  }
+
+  
   
 
 

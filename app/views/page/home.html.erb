@@ -2,10 +2,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-   
+    <br />
+    <div class="jumbotron" style="max-width: 180rem;">
+    <h1 class="text-center my-5">Welcome to Mini Latte</h1>
+    <h2 class="text-center my-5">It is a course enrollment platform. Search and enroll the course you want.</h2>
+    
+      <li class="btn btn-lg center-button btn-primary"><%= link_to "Start Search the course!", search_path %></li>
+    </div>
   </head>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50">
-
+  <body >
+  <div class="homepagecards">
+    <div class="column">
+   <h1>Data Links</h1>
+    <div class="card mb-3" style="max-width: 80rem;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">The instructors datasets</h5>
+          <p class="card-text">Supporting edit on instructorId, name and email.</p>
+          <li class="btn btn-lg sub1-button btn-success"><%= link_to "Instructor Page", instructors_path %> </li>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="card mb-3" style="max-width: 80rem;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">The subjects datasets</h5>
+          <p class="card-text">Supporting edit on instructorId and name.</p>
+          <li class="btn btn-lg sub2-button btn-success"><%= link_to "Subject Page", subjects_path %> </li>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="card mb-3" style="max-width: 80rem;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">The courses datasets</h5>
+          <p class="card-text">Supporting edit on course code, name and description.</p>
+          <li class="btn btn-lg sub3-button btn-success"><%= link_to "Course Page", courses_path %> </li>
+        </div>
+      </div>
+    </div>
+ 
+    
+    
+  </div>
+  
+  </div>
   </body>
   
 </html>
