@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root :to => 'page#home'
-  get  'course_list',    to: 'courses#index'
-  get  'subject_list',    to: 'subjects#index'
-  get  'instructor_list',    to: 'instructors#index'
+  get  '/courses',    to: 'courses#index'
+  get  '/subjects',    to: 'subjects#index'
+  get  '/instructors',    to: 'instructors#index'
 
   get  '/signup', to: 'users#new'
   post '/signup', to: 'users#create'

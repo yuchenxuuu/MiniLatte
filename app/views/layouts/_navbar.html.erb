@@ -2,21 +2,21 @@
 <nav class="nav navbar navbar-expand-lg navbar-fixed-top" style="background-color: #A4D593;">
   <%= link_to "Mini Latte", root_path, class: "navbar-brand" %>
     <% if logged_in? %>
-        <ul class="nav nav-tabs navbar-right">
+        <ul class="nav nav-tabs">
             <li>
-                <%= link_to "Instructor Page", 'instructor_list' %> 
+                <%= link_to "Instructor Page", instructors_path %> 
             </li>
             <li>
-                <%= link_to "Subject Page", 'subject_list' %> 
+                <%= link_to "Subject Page", subjects_path %> 
             </li>
             <li>
-                <%= link_to "Course Page", 'course_list'  %> 
+                <%= link_to "Course Page", courses_path %> 
             </li>
             <li><%= link_to "Search", search_path %></li>
          
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Account <b class="caret"></b>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+                        Account
                 </a>
                 <ul class="dropdown-menu">
                         <li><%= link_to "Profile", current_user %></li>
@@ -30,11 +30,9 @@
         </ul>
     <% else %>
         <ul class="nav nav-tabs navbar-right">
-          
             <li><%= link_to "Log in", login_path  %></li>
         </ul>
     <% end %>
-   
 </nav>
 
 
