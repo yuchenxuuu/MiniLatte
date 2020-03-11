@@ -64,6 +64,11 @@ input, textarea, select, .uneditable-input {
     border: 1px solid #D4E980 !important;
   }
 
+  .btn {
+    background-color: #D4E980 !important;
+    border: 1px solid #D4E980 !important;
+  }
+
 
   .sub1-button {
     border: 1px solid #bbb;
